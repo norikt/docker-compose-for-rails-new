@@ -1,7 +1,7 @@
 FROM ruby:2.5.0-alpine
 
 ENV BUILD_PACKAGES="build-base bash" \
-    DEV_PACKAGES="curl-dev ruby-dev zlib-dev libxml2-dev libxslt-dev tzdata yaml-dev curl mariadb-client" \
+    DEV_PACKAGES="curl-dev ruby-dev zlib-dev libxml2-dev libxslt-dev tzdata yaml-dev curl postgresql-client" \
     RUBY_PACKAGES="ruby-json yaml nodejs yarn" \
     RAILS_ROOT="/myapp"
 
@@ -11,7 +11,7 @@ RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/community/ >> /etc/apk/reposi
     $DEV_PACKAGES \
     $RUBY_PACKAGES \
     && apk add --no-cache --virtual gem_dep_packages \
-    mariadb-dev \
+    postgresql-dev \
     imagemagick6 \
     imagemagick6-dev \
     linux-headers \
