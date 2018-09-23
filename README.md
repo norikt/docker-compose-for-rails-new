@@ -3,7 +3,7 @@
 構成
 ------
 - Ruby 2.5.1
-- Rails 5.2.0
+- Rails 5.2.X
 - PostgreSql
 
 Usage
